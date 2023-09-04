@@ -8,8 +8,13 @@ export const clearResults = () => {
 }
 
 
-export const displayResults = data => {
-    data.forEach(movie => {
+export const displayResults = (data, keyword) => {
+    const filteredData = data.filter(movie => {
+        return movie.name.toLowerCase().includes(keyword.toLowerCase()) ||
+            movie.description.toLowerCase().includes(keyword.toLowerCase());
+    });
+
+    filteredData.forEach(movie => {
         console.log(movie.name);
         elements.searchResults.innerHTML += `
         <li class="media">
@@ -19,8 +24,8 @@ export const displayResults = data => {
                   <a href ="#${movie.name}">${movie.name}</a>
                     <p>${movie.directors}</p>
                     <p>${movie.description}</p>
-
+                    
                 </div>
-            </li>`
-    })
+            </li>`;
+    });
 }
