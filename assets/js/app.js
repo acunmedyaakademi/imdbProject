@@ -1,6 +1,8 @@
 import Search from "./search.js";
 import { elements } from "./base.js";
 import * as searchView from "./searchView.js"
+import * as movieView from "./movieDetails.js"
+import { Movie } from "./movie.js";
 
 
 const state = {}
@@ -26,3 +28,17 @@ elements.searchForm.addEventListener('submit', function (e) {
     e.preventDefault()
     searchController()
 })
+
+//Film içeriğinin hashlere göre gösterilmesi
+
+const movieDetail = async () => {
+    const id = window.location.hash.replace('#', '')
+    if (id) {
+        state.movie = new Movie(id)
+
+        await state.movie.getMovie()
+        movieView.displayMovie(state.movie.data)
+        console.log((id))
+    }
+}
+window.addEventListener('hashchange', movieDetail)

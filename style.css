@@ -1,0 +1,129 @@
+*{
+    margin-top: 10px;
+}
+body{
+    background-color: #272727;
+}
+
+.headerLogo h1{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    background-color: #f5c519;
+    width: 100px;
+    border-radius: 5px;
+}
+
+.headerLinks{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+}
+
+.headerInput{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    gap: 5px;
+}
+
+.headerInput input{
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+}
+
+.headerInput button{
+    border: none;
+    border-radius: 5px;
+    background-color: #f5c519;
+    color: black;
+}
+
+.headersAut button{
+    border: none;
+    background-color: #f5c519;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.carousel-control-next-icon:hover{
+    background-color: #f5c519;
+    transition: 1000ms;
+}
+
+.carousel-control-prev-icon:hover{
+    background-color: #f5c519;
+    transition: 1000ms;
+}
+
+.cardSection h3{
+    color: white;
+}
+
+.sectionsHeader{
+    display: flex;
+    align-items: center;
+}
+
+.headersChevron{
+    width: 50px;
+    height: 50px;
+}
+
+.card{
+    color: black !important;
+    width: 230px;
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+padding-bottom: 10px;
+margin: 10px;
+}
+
+.moviePic{
+    width: 200px;
+    height: 300px;
+}
+
+.movieRating{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.movieRating span{
+    margin-left: 10px;
+}
+
+.movieRating img{
+    width: 30px;
+    height: 30px;
+}
+
+.cardButton button{
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    background-color: #272727;
+    color: white;
+}
+
+.cardButton button:hover{
+    color: #272727;
+    background-color: #f5c519;
+    transition: 500ms;
+}
+
+.movieCardCategory{
+    color: white;
+    border: 1px solid #f5c519;
+    border-radius: 12px;
+    background-color: #f5c51937;
+}
