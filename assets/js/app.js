@@ -37,8 +37,9 @@ const movieDetail = async () => {
         state.movie = new Movie(id)
 
         await state.movie.getMovie()
-        movieView.displayMovie(state.movie.data)
-        console.log((id))
+        //console.log(state.movie)
+        //movieView.displayMovie(state.movie.data)
     }
 }
 window.addEventListener('hashchange', movieDetail)
+

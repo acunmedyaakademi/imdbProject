@@ -6,7 +6,7 @@ export class Movie {
     async getMovie() {
         try {
             const response = await fetch(
-                'https://qvrzjkrzegjeagmsdgvq.supabase.co/rest/v1/movies',
+                (`https://qvrzjkrzegjeagmsdgvq.supabase.co/rest/v1/movies?id=eq.${this.id}`),
                 {
                     headers: {
                         'Content-Type': 'application/json',
