@@ -11,7 +11,8 @@ export const clearResults = () => {
 export const displayResults = (data, keyword) => {
     const filteredData = data.filter(movie => {
         return movie.name.toLowerCase().includes(keyword.toLowerCase()) ||
-            movie.description.toLowerCase().includes(keyword.toLowerCase());
+            movie.description.toLowerCase().includes(keyword.toLowerCase()); 
+            // movie.rating.toLowerCase().includes(keyword.toLowerCase());
     });
 
     filteredData.forEach(movie => {
@@ -34,6 +35,42 @@ export const displayResults = (data, keyword) => {
         const writersArray = movie.writers.split(',');
         const writersHTML = writersArray.map(writers => `<a href="#">${writers.trim()}</a>`);
 
+        // const ratingArray = movie.rating.split(' ');
+        // const ratingHTML = ratingArray.map(rating => `<span>${rating.trim()}<img src="${movie.poster}"></span>`)
+
+
+        // elements.topMovies.innerHTML +=` 
+        // <span>Top 5 Movies <img src="assets/icons/4781843_arrows_chevron_direction_left_move_icon.png" alt=""></span>
+        // <div>
+        //   <div class="content">
+        //     <h2></h2>
+        //     <!-- <span>UI & UX Designer</span> -->
+        //   </div>
+        // </div>
+        // <div>
+        //   <div class="content">
+        //     <h2>Inception</h2>
+        //     <!-- <span>CEO Expert</span> -->
+        //   </div>
+        // </div>
+        // <div>
+        //   <div class="content">
+        //     <h2>Interstellar</h2>
+        //     <!-- <span>Web Designer</span> -->
+        //   </div>
+        // </div>
+        // <div>
+        //   <div class="content">
+        //     <h2>The Dark Knight</h2>
+        //     <!-- <span>Marketing Coordinator</span> -->
+        //   </div>
+        // </div>
+        // <div>
+        //     <div class="content">
+        //       <h2>Fight Club</h2>
+        //       <!-- <span>Marketing Coordinator</span> -->
+        //     </div>
+        //   </div>`
 
         elements.searchResults.innerHTML += `
         <div class="card col-md-4">
@@ -69,11 +106,24 @@ export const displayResults = (data, keyword) => {
 
 
          <div class="modal-body">
+         <div class="container-fluid mb-5">
+         <div class="row">
+         <div class="col-md-6">
          <img src = "${movie.poster}" style ="width:150px">
+         </div>
+         <div class="col-md-6">
          <h5>Description</h5>
          <p>${movie.description}</p>
+         </div>
+         </div>
+         </div>
+         
          <h5>Genres</h5>
+         <div class="container-fluid">
+         <div class="row">
          ${genresHTML.join(' ')}
+         </div>
+         </div>
          <h5>Directors</h5>
          ${directorsHTML.join(', ')}
          <h5>Stars</h5>
@@ -86,7 +136,7 @@ export const displayResults = (data, keyword) => {
          
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger modalClose" data-dismiss="modal">Close</button>
          </div>
 
        </div>
