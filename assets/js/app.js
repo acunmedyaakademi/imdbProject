@@ -8,7 +8,7 @@ import { Movie } from "./movie.js";
 const state = {}
 
 const searchController = async () => {
-    const keyword = elements.searchInput.value
+    const keyword = elements.searchInput.value 
 
     if (keyword) {
         state.search = new Search()
@@ -17,6 +17,7 @@ const searchController = async () => {
         searchView.clearInput()
         searchView.clearResults()
         searchView.displayResults(state.search.data, keyword)
+        // topFive.displayResults(state.search.data, keyword)
     }
     else {
         alert('kelime giriniz')

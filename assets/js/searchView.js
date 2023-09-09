@@ -132,6 +132,23 @@ export const displayResults = (data, keyword) => {
          ${castHTML.join(', ')}
          <h5>Writers</h5>
          ${writersHTML.join(', ')}
+         <div>
+         <h5>Like This Movie</h5>
+            <div class="container-fluid">
+                <div class="row">
+                <div class="modalCard">
+                    <h4 class="mt-3">${movie.name}</h4>
+                    <img style ="width:130px" src="${movie.poster}">
+                    <span><button class="trailerBtn mt-3">Watch Trailer</button></span>
+                </div>
+                <div class="modalCard">
+                    <h4 class="mt-3">${movie.name}</h4>
+                    <img style ="width:130px" src="${movie.poster}">
+                    <span><button class="trailerBtn mt-3">Watch Trailer</button></span>
+                </div>
+                </div>
+            </div>
+        </div>
         
          
           </div>
